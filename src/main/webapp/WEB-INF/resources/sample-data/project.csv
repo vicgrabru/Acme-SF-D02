@@ -6,7 +6,7 @@ project-04,ABC-1234,貸んい建濯よ芝弾テソ,Project con caracteres japone
 project-05,BCD-2345,Project con abstractField de 1 caracter,a,false,EUR 26.99,https://www.example.com,true
 project-06,CDE-3456,Project con abstractField de 100 caracteres,Lorem ipsum dolor sit amets consectetur adipiscing elits Curabitur tortor lectuss viverra non augues,false,EUR 5.98,https://www.example.com,false
 project-07,DEF-4567,Project con caracteres japoneses en abstractField,貸んい建濯よ芝弾テソ,false,EUR 26.99,https://www.example.com,false
-project-08,EFG-5678,Project con valor 0,Test abstract,false,EUR 26.99,https://www.example.com,true
+project-08,EFG-5678,Project con valor 0,Test abstract,true,EUR 26.99,https://www.example.com,true
 project-09,FGH-6789,Project sin link,Test abstract,false,EUR 26.99,,true
 project-10,GHI-7890,Project para manager 10,Test abstract,false,EUR 4.87,https://www.example.com,true
-project-11,HIJ-8901,Project para manager 11,Test abstract,false,EUR 26.99,https://www.example.com,true
+project-11,HIJ-8901,Project para manager 11,Test abstract,true,EUR 26.99,https://www.example.com,true

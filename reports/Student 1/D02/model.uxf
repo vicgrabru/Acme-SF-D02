@@ -15,7 +15,7 @@ Manager
 + degree: String {NotBlank, Length(max=75)}
 + overview: String {NotBlank, Length(max=100)}
 + certifications: String {NotBlank, Length(max=100)}
-+ optionalLink: String {URL, Length(max=255)}
++ optionalLink: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -86,8 +86,8 @@ Project
 + title: String {NotBlank, Length(max=75)}
 + abstract+ title: String {NotBlank, Length(max=100)}
 + hasFatalErrors: Boolean
-+ cost: Integer {PositiveOrZero}
-+ optionalLink: String {URL, Length(max=255)}
++ cost: Money
++ optionalLink: String {URL}
 + draftMode: Boolean
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -121,7 +121,7 @@ UserStory
 + estimatedCost: Integer {Positive}
 + acceptanceCriteria: String {NotBlank, Length(max=100)}
 + priority: Priority
-+ optionalLink: String {URL, Length(max=255)}
++ optionalLink: String {URL}
 
 </panel_attributes>
     <additional_attributes/>
