@@ -308,6 +308,7 @@
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
 
+
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
         
         
@@ -433,6 +434,7 @@
     
     
     </wb-module>
+
 
 
 
