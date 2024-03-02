@@ -1,10 +1,12 @@
 
 package acme.entities.sponsorship;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
@@ -58,5 +60,10 @@ public class Sponsorship extends AbstractEntity {
 
 	@URL
 	private String				link;
+
+	// Relationships ----------------------------------------------------------
+
+	@OneToMany(mappedBy = "invoice")
+	private Collection<Invoice>	records;
 
 }
