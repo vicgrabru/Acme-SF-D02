@@ -64,7 +64,7 @@ public class Sponsorship extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@OneToMany(mappedBy = "invoice")
+	@OneToMany(mappedBy = "sponsorship")
 	private Collection<Invoice>	invoices;
 
 }
