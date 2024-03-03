@@ -1,32 +1,31 @@
 
-package acme.entities.audit;
+package acme.entities.sponsorship;
 
-
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class AuditRecord extends AbstractEntity {
-
+public class Sponsorship extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -36,31 +35,35 @@ public class AuditRecord extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "AU-[0-9]{4}-[0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
 	private String				code;
 
-	@NotNull
-	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				periodStart;
+	@Past
+	@NotNull
+	private Date				moment;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				duration;
 
 	@NotNull
-	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				periodEnd;
+	@Positive
+	private Integer				amount;
 
 	@NotNull
-	private Mark				mark;
+	private Type				type;
+
+	@Email
+	private String				email;
 
 	@URL
 	private String				link;
 
-
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Audit				audit;
+	@OneToMany(mappedBy = "invoice")
+	private Collection<Invoice>	invoices;
 
 }
