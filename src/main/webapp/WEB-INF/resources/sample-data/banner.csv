@@ -1,4 +1,4 @@
-key,instantiationMoment,periodStart,periodEnd,pictureLink,slogan,webDocumentLink
+key,instantiation-moment,period-start,period-end,picture-link,slogan,web-document-link
 banner-01,"1985/03/01 08:00","1986/03/01 08:00","2100/03/01 08:00","https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg/1200px-ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg","Banner para valores intermedios de todo","https://www.informatica.us.es/"
 banner-02,"2022/07/29 23:59","2024/03/01 08:00","2100/03/01 08:00","https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg/1200px-ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg","Banner con creacion 1 minuto antes del momento presente","https://www.informatica.us.es/"
 banner-03,"1985/03/01 08:00","1985/03/01 08:01","2100/03/01 08:00","https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg/1200px-ETSI_Inform%C3%A1tica_Sevilla_y_DrupalCamp_Spain_2011.jpg","Banner con display 1 minuto despues de instanciacion","https://www.informatica.us.es/"
