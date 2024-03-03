@@ -6,12 +6,12 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import lombok.Getter;
@@ -37,13 +37,13 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	private Priority	priority;
 
-	private boolean		status;
+	private boolean		isCritical;
 
-	@Temporal(TemporalType.TIME)
-	@Future
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date		duration;
 
+	@URL
 	private String		link;
 
 }
