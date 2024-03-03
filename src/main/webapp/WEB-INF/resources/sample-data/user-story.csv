@@ -1,4 +1,4 @@
-key,title,description,estimatedCost,acceptanceCriteria,priority,optionalLink,key:project
+key,title,description,estimated-cost,acceptance-criteria,priority,optional-link,key:project
 user-story-01,Test title,Test description,10,Test acceptance criteria,MUST,https://www.example.com,project-01
 user-story-02,a,User Story con title de 1 caracter,10,Test acceptance criteria,MUST,https://www.example.com,project-02
 user-story-03,Lorem ipsum dolor sit amets consectetur adipiscing elits aenean massa nunc,User Story con title de 75 caracteres,10,Test acceptance criteria,WONT,https://www.example.com,project-03
@@ -14,3 +14,4 @@ user-story-12,User Story con priority Should,Test description,10,Test acceptance
 user-story-13,User Story con priority Could,Test description,10,Test acceptance criteria,COULD,https://www.example.com,project-01
 user-story-14,User Story con priority Wont,Test description,27,Test acceptance criteria,WONT,https://www.example.com,project-02
 user-story-15,User Story sin link,Test description,10,Test acceptance criteria,MUST,,project-03
+user-story-16,User Story con link null,Test description,10,Test acceptance criteria,MUST,null,project-04
