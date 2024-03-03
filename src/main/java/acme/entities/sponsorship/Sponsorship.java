@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,6 +21,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -66,5 +68,10 @@ public class Sponsorship extends AbstractEntity {
 
 	@OneToMany(mappedBy = "sponsorship")
 	private Collection<Invoice>	invoices;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Project			proyect;
 
 }
