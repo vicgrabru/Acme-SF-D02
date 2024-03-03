@@ -22,28 +22,30 @@ import lombok.Setter;
 @Setter
 public class Objective extends AbstractEntity {
 
+	//Serialisation identifier ------------------------------------------
+	private static final long	serialVersionUID	= 1L;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	private Date		instantationMoment;
+	private Date				instantationMoment;
 
 	@NotBlank
 	@Length(max = 75)
-	private String		title;
+	private String				title;
 
 	@NotBlank
 	@Length(max = 100)
-	private String		description;
+	private String				description;
 	@NotNull
-	private Priority	priority;
+	private Priority			priority;
 
-	private boolean		isCritical;
+	private boolean				isCritical;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date		duration;
+	private Date				duration;
 
 	@URL
-	private String		link;
+	private String				link;
 
 }
