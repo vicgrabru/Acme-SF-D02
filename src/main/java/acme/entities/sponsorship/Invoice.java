@@ -8,16 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,12 +49,12 @@ public class Invoice extends AbstractEntity {
 	private Date				dueDate;
 
 	@NotNull
-	@Positive
-	private Integer				quantity;
+	@Valid
+	private Money				quantity;
 
 	@NotNull
 	@PositiveOrZero
-	private Integer				tax;
+	private Double				tax;
 
 	@URL
 	private String				link;
@@ -62,7 +63,13 @@ public class Invoice extends AbstractEntity {
 
 
 	@Transient
-	public Integer totalAmount() {
-		return this.getQuantity() + (this.getTax()) / 100 * this.getQuantity();
+	public Money totalAmount() {
+		Double amount = this.getQuantity().getAmount();
+		double taxAmount = amount * this.getTax() / 100;
+		Double total = amount + taxAmount;
+		Money res = new Money();
+		res.setAmount(total);
+		res.setCurrency(this.getQuantity().getCurrency());
+		return res;
 	}
 }
