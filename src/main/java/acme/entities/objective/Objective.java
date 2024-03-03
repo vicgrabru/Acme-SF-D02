@@ -28,13 +28,13 @@ public class Objective extends AbstractEntity {
 	private Date		instantationMoment;
 
 	@NotBlank
-	@Length(min = 0, max = 75)
+	@Length(max = 75)
 	private String		title;
 
 	@NotBlank
-	@Length(min = 0, max = 100)
+	@Length(max = 100)
 	private String		description;
-
+	@NotNull
 	private Priority	priority;
 
 	private boolean		status;
