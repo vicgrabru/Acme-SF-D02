@@ -56,14 +56,14 @@ public class Project extends AbstractEntity {
 
 	private boolean					draftMode;
 
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected Manager				manager;
-
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
 
 	@OneToMany(mappedBy = "project")
 	private Collection<UserStory>	userStories;
