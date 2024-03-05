@@ -3,7 +3,6 @@ package acme.entities.currency;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import acme.client.data.AbstractEntity;
 import lombok.Getter;
@@ -23,7 +22,6 @@ public class AcceptedCurrency extends AbstractEntity {
 	@NotBlank
 	private String				currency;
 
-	@NotNull
-	private Boolean				isSystemCurrency;
+	private boolean				isSystemCurrency;
 
 }
