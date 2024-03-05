@@ -72,6 +72,6 @@ public class Sponsorship extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Project			proyect;
+	protected Project			project;
 
 }
