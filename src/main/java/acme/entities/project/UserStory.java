@@ -59,6 +59,8 @@ public class UserStory extends AbstractEntity {
 	@URL
 	private String				optionalLink;
 
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

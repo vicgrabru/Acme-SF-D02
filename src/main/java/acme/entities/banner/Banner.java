@@ -27,6 +27,7 @@ public class Banner extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
@@ -40,7 +41,6 @@ public class Banner extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				periodEnd;
 
-	@NotBlank
 	@URL
 	private String				pictureLink;
 
@@ -48,7 +48,6 @@ public class Banner extends AbstractEntity {
 	@Length(max = 75)
 	private String				slogan;
 
-	@NotBlank
 	@URL
 	private String				webDocumentLink;
 
