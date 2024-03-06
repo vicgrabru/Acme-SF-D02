@@ -15,10 +15,10 @@ public class ClientDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	private Integer				below25CompletnessProgressLogs;
-	private Integer				between25and50CompletnessProgressLogs;
-	private Integer				between50and75CompletnessProgressLogs;
-	private Integer				above75CompletnessProgressLogs;
+	private Integer				below25CompletenessProgressLogs;
+	private Integer				between25and50CompletenessProgressLogs;
+	private Integer				between50and75CompletenessProgressLogs;
+	private Integer				above75CompletenessProgressLogs;
 
 	private Double				avgContractBudget;
 	private Double				stdContractBudget;
