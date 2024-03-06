@@ -1,9 +1,9 @@
 
-package acme.entities.currency;
+package acme.entities.configuration;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import acme.client.data.AbstractEntity;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AcceptedCurrency extends AbstractEntity {
+public class SystemConfiguration extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -21,9 +21,11 @@ public class AcceptedCurrency extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	private String				currency;
+	@Pattern(regexp = "[A-Z]{3}")
+	private String				systemCurrency;
 
-	@NotNull
-	private Boolean				isSystemCurrency;
+	@NotBlank
+	@Pattern(regexp = "[A-Z]{3}(,[A-Z]{3})*")
+	private String				acceptedCurrencies;
 
 }
