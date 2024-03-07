@@ -1,23 +1,13 @@
 
 package acme.entities.audit;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -39,55 +29,40 @@ public class Audit extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long		serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
-	private String					code;
+	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	private Date					executionDate;
+	private Date				executionDate;
 
 	@NotNull
-	private Type					type;
+	private Type				type;
 
 	@NotBlank
 	@Length(max = 100)
-	private String					correctiveActions;
+	private String				correctiveActions;
+
+	@NotNull
+	private Mark				mark;
 
 	@URL
-	private String					link;
+	private String				link;
+
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
-
-	@OneToMany(mappedBy = "audit")
-	private Collection<AuditRecord>	records;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Project				project;
+	protected Project			project;
 
-	// Derived attributes -----------------------------------------------------
-
-
-	@Transient
-	public Mark mark() {
-		List<Mark> marksList = new ArrayList<Mark>();
-		Set<Mark> marksSet = new TreeSet<Mark>();
-		for (AuditRecord record : this.getRecords()) {
-			Mark mark = record.getMark();
-			marksList.add(mark);
-			marksSet.add(mark);
-		}
-		Map<Mark, Integer> markFrequencies = new HashMap<Mark, Integer>();
-		for (Mark mark : marksSet)
-			markFrequencies.put(mark, Collections.frequency(marksList, mark));
-		return Collections.max(markFrequencies.entrySet(), Map.Entry.comparingByValue()).getKey();
-	}
 }
