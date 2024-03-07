@@ -40,3 +40,5 @@ user-account-sponsor-06,true,"UserIdentity{name: 'Sophia', surname: 'Sponsor', e
 user-account-sponsor-07,true,"UserIdentity{name: 'James', surname: 'Sponsor', email: 'james@acme.com'}",sponsor7,sponsor7
 user-account-sponsor-08,true,"UserIdentity{name: 'Olivia', surname: 'Sponsor', email: 'olivia@acme.com'}",sponsor8,sponsor8
 user-account-sponsor-09,true,"UserIdentity{name: 'William', surname: 'Sponsor', email: 'william@acme.com'}",sponsor9,sponsor9
+user-account-auditor-01,true,"UserIdentity{name: 'Au', surname: 'Ditor', email: 'auditor@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Ditor', surname: 'Au', email: 'ditorau@acme.com'}",auditor2,auditor2
