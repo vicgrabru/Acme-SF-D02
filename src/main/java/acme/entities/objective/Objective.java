@@ -1,27 +1,29 @@
 
-package acme.entities.project;
+package acme.entities.objective;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.datatypes.Money;
-import acme.roles.Manager;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Project extends AbstractEntity {
+public class Objective extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -29,10 +31,10 @@ public class Project extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Column(unique = true)
-	@NotBlank
-	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
-	private String				code;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				instantationMoment;
 
 	@NotBlank
 	@Length(max = 75)
@@ -40,27 +42,25 @@ public class Project extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	private String				abstractField;
-
-	private boolean				hasFatalErrors;
+	private String				description;
 
 	@NotNull
-	@Valid
-	private Money				cost;
+	private Priority			priority;
+
+	private boolean				isCritical;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	private Date				duration;
 
 	@URL
-	private String				optionalLink;
-
-
-	private boolean				draftMode;
-
-	// Derived attributes -----------------------------------------------------
+	private String				link;
 
 	// Relationships ----------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Manager			manager;
+	protected Project			project;
 
 }

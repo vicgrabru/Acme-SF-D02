@@ -1,5 +1,5 @@
 
-package acme.entities.risk;
+package acme.entities.sponsorship;
 
 import java.util.Date;
 
@@ -14,20 +14,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.entities.project.Project;
+import acme.client.data.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Risk extends AbstractEntity {
+public class Invoice extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -37,42 +36,47 @@ public class Risk extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "R-[0-9]{3}")
-	private String				reference;
+	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
+	private String				code;
 
-	@NotNull
-	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				identificationDate;
+	@Past
+	@NotNull
+	private Date				registrationTime;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				dueDate;
 
 	@NotNull
-	@Positive
-	private Double				impact;
+	@Valid
+	private Money				quantity;
 
 	@NotNull
-	private Double				probability;
-
-	@NotBlank
-	@Length(max = 100)
-	private String				description;
+	@PositiveOrZero
+	private Double				tax;
 
 	@URL
 	private String				link;
+
+	// Relationships ----------------------------------------------------------
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Sponsorship		sponsorship;
 
 	// Derived attributes -----------------------------------------------------
 
 
 	@Transient
-	public Double value() {
-		return this.impact * this.probability;
+	public Money totalAmount() {
+		Double amount = this.getQuantity().getAmount();
+		double taxAmount = amount * this.getTax() / 100;
+		Double total = amount + taxAmount;
+		Money res = new Money();
+		res.setAmount(total);
+		res.setCurrency(this.getQuantity().getCurrency());
+		return res;
 	}
-
-	// Relationships ----------------------------------------------------------
-
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Project project;
-
 }

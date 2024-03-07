@@ -1,4 +1,4 @@
-key,key:userAccount,degree,overview,certifications,optionalLink
+key,key:userAccount,degree,overview,certifications,optional-link
 manager-01,user-account-manager-01,"Test degree","Test overview","Test certifications","https://www.example.com"
 manager-02,user-account-manager-02,"a","Manager with degree of 1 character","Test certifications","https://www.example.com"
 manager-03,user-account-manager-03,"Lorem ipsum dolor sit amets consectetur adipiscing elits Morbi mattis nisis","Manager with degree of 75 characters","Test certifications","https://www.example.com"
