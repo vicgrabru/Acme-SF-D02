@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -38,9 +39,10 @@ public class ProgressLog extends AbstractEntity {
 	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
 	private String				recordId;
 
-	@Positive
-	@Max(100)
 	@NotNull
+	@Positive
+	@Digits(integer = 3, fraction = 2)
+	@Max(100)
 	private Double				completeness;
 
 	@NotBlank
