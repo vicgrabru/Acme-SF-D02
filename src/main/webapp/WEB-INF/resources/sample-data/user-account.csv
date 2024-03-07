@@ -31,3 +31,12 @@ user-account-client-05,true,"UserIdentity{name: 'Henry', surname: 'Client', emai
 user-account-client-06,true,"UserIdentity{name: 'Jeremy', surname: 'Client', email: 'client6@acme.com'}",client6,client6
 user-account-developer-01,true,"UserIdentity{name: 'Albert', surname: 'Developer', email: 'albert@acme.com'}",developer1,developer1
 user-account-developer-02,true,"UserIdentity{name: 'Andrew', surname: 'Developer', email: 'andrew@acme.com'}",developer2,developer2
+user-account-sponsor-01,true,"UserIdentity{name: 'Peter', surname: 'Sponsor', email: 'peter@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'John', surname: 'Sponsor', email: 'john@acme.com'}",sponsor2,sponsor2
+user-account-sponsor-03,true,"UserIdentity{name: 'Alice', surname: 'Sponsor', email: 'alice@acme.com'}",sponsor3,sponsor3
+user-account-sponsor-04,true,"UserIdentity{name: 'Emma', surname: 'Sponsor', email: 'emma@acme.com'}",sponsor4,sponsor4
+user-account-sponsor-05,true,"UserIdentity{name: 'David', surname: 'Sponsor', email: 'david@acme.com'}",sponsor5,sponsor5
+user-account-sponsor-06,true,"UserIdentity{name: 'Sophia', surname: 'Sponsor', email: 'sophia@acme.com'}",sponsor6,sponsor6
+user-account-sponsor-07,true,"UserIdentity{name: 'James', surname: 'Sponsor', email: 'james@acme.com'}",sponsor7,sponsor7
+user-account-sponsor-08,true,"UserIdentity{name: 'Olivia', surname: 'Sponsor', email: 'olivia@acme.com'}",sponsor8,sponsor8
+user-account-sponsor-09,true,"UserIdentity{name: 'William', surname: 'Sponsor', email: 'william@acme.com'}",sponsor9,sponsor9

@@ -1,13 +1,11 @@
 
 package acme.entities.sponsorship;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -55,7 +53,7 @@ public class Sponsorship extends AbstractEntity {
 	@Past
 	@NotNull
 	private Date				endDuration;
-	
+
 	@NotNull
 	@Valid
 	private Money				amount;
@@ -70,9 +68,6 @@ public class Sponsorship extends AbstractEntity {
 	private String				link;
 
 	// Relationships ----------------------------------------------------------
-
-	@OneToMany(mappedBy = "sponsorship")
-	private Collection<Invoice>	invoices;
 
 	@NotNull
 	@Valid
