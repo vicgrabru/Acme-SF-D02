@@ -38,7 +38,7 @@ Objective
 +isCritical: boolean
 +startDateDuration: Date {TemporalType(TIMESTAMP)}
 +endDateDuration: Date {TemporalType(TIMESTAMP)}
--link: String {URL}</panel_attributes>
++link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -77,8 +77,8 @@ Notice
 +title: String {NotBlank, Length(max=75)}
 +author: String {NotBlank, Length(max=75)}
 +message: String {NotBlank, Length(max=100)}
--email: String {Email}
--link: String {URL}</panel_attributes>
++email: String {Email}
++link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -98,8 +98,8 @@ Claim
 +heading: String {NotBlank, Length(max=75)}
 +description: String {NotBlank, Length(max=100)}
 +department: String {NotBlank, Length(max=100)}
--email: String {Email}
--link: String {URL}</panel_attributes>
++email: String {Email}
++link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -187,7 +187,7 @@ Risk
 +impact: Double {Positive}
 +probability: Double
 +description: String {NotBlank, Length(max=100)}
--link: String {URL}
++link: String {URL}
 +/ value: Double {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
