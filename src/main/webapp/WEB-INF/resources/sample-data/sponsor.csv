@@ -1,4 +1,4 @@
-key,name,benefits,web-page,email,key:userAccount
+key,name,benefits,web-page,email,key:user-account
 sponsor-01,Sponsor 1,Exclusive product discounts,https://www.sponsor1.com,null,user-account-sponsor-01
 sponsor-02,Sponsor 2,Priority access to events,https://www.sponsor2.com,sponsor2@sponsor2.com,user-account-sponsor-02
 sponsor-03,Sponsor 3,Advertisement opportunities,https://www.sponsor3.com,sponsor3@sponsor3.com,user-account-sponsor-03

@@ -1,4 +1,4 @@
-key,code,instantiation-moment,providerName,customerName,goals,budget,draft-mode,key:project
+key,code,instantiation-moment,provider-name,customer-name,goals,budget,draft-mode,key:project
 contract-01,A-001,2002/04/14 08:00,Laurel,Peter,Make a lot of money,EUR 15.00,false,project-01
 contract-02,A-002,2022/07/29 23:59,Laurel,Peter,Test last minute,EUR 15.00,false,project-01
 contract-03,A-003,2002/04/14 08:00,S,Peter,Test short provider name,EUR 15.00,false,project-01

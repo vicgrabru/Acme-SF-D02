@@ -1,4 +1,4 @@
-key,record-id,completeness,comment,registrationMoment,responsiblePerson,key:contract
+key,record-id,completeness,comment,registration-moment,responsible-person,key:contract
 progress-log-01,PG-A-0001,50.0,This is a comment,2002/04/14 08:00,Mary,contract-01
 progress-log-02,PG-A-0002,0.01,Test minimum completeness,2002/04/14 08:00,Mary,contract-02
 progress-log-03,PG-A-0003,100.0,Test maximum completeness,2002/04/14 08:00,Mary,contract-03

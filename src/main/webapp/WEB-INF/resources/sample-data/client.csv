@@ -1,4 +1,4 @@
-key,key:userAccount,identification,company-name,type,email,link
+key,key:user-account,identification,company-name,type,email,link
 client-01,user-account-client-01,CLI-0001,Example company,individual,client1@acme.com,http://client1.com
 client-02,user-account-client-02,CLI-0002,C,individual,client2@acme.com,http://client2.com
 client-03,user-account-client-03,CLI-0003,Extense companyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy,individual,client3@acme.com,http://client3.com
