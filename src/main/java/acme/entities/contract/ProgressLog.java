@@ -1,3 +1,14 @@
+/*
+ * ProgressLog.java
+ *
+ * Copyright (C) 2012-2024 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
 package acme.entities.contract;
 
@@ -39,10 +50,11 @@ public class ProgressLog extends AbstractEntity {
 	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
 	private String				recordId;
 
+	@NotNull
 	@Positive
 	@Digits(integer = 3, fraction = 2)
 	@Max(100)
-	private double				completeness;
+	private Double				completeness;
 
 	@NotBlank
 	@Length(max = 100)
@@ -56,6 +68,8 @@ public class ProgressLog extends AbstractEntity {
 	@NotBlank
 	@Length(max = 75)
 	private String				responsiblePerson;
+
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
